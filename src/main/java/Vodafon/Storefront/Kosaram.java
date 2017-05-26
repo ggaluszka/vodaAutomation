@@ -1,12 +1,8 @@
 package Vodafon.Storefront;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -25,9 +21,19 @@ public class Kosaram extends PageObject {
     @FindBy(xpath = "//button[@id='carttopersonalinfo']")
     private WebElement Proceed_Button;
 
+    @FindBy(linkText = "My Vodafone")
+    private WebElement myVodafoneButton;
+
+    @FindBy(id = "basketTab" )
+    private WebElement basketTab;
+
+    @FindBy(id = "minicart_btn" )
+    private WebElement minicart_btn;
+
+
+
+
     public void kosaram_proceed() throws InterruptedException {
-
-
 
         dropdown_EU_Roaming.click();
             Thread.sleep(500);
@@ -39,7 +45,23 @@ public class Kosaram extends PageObject {
         Proceed_Button.click();
     }
 
+    public  void goToKosaram() throws InterruptedException {
 
-    return new Kosaram(driver);
+        myVodafoneButton.click();
+        basketTab.click();
+        Thread.sleep(500);
+        minicart_btn.click();
+
+
+
+    }
+
+
+
+
+
+
+
+
 
 }
