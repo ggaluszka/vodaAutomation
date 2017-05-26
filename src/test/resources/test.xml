@@ -1,0 +1,12 @@
+<suite name="Local:37.StoreFront - Automaty" verbose="1">
+    <test name="SubmitOrder" preserve-order="true">
+        <parameter name="browserID"  value="2"/>
+        <classes>
+            <class name="Vodafon.Storefront.StoreFrontTest">
+                <methods>
+                    <include name="StoreFrontTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
